@@ -12,3 +12,15 @@ print(6 % 4)
 # math functions
 print(round(3.9))
 print(abs(-20))
+
+# operator precedence
+print ((20-3) + 2 ** 2)
+
+# ()
+# **
+# * /
+# + -
+
+# binary extraction and converstion
+print(bin(5))
+print(int('ob101', 2))
