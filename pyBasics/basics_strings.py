@@ -26,4 +26,15 @@ weather = "It\'s \"kind kind of \" sunny"
 
 print(weather)
 
-#
+# formatted strings
+name = 'Johnny'
+age = 55
+
+print(f'hi {name}. You are {age} years old')
+
+# string indexes
+selfish = '01234567'
+        #  01234567
+
+# [start:stop:stepover]
+print(selfish[::-1])
