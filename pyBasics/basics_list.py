@@ -52,3 +52,39 @@ basket.pop(0)
 basket.remove(3)
 basket.clear()
 print(basket)
+
+# insert
+basket = ['a', 'b', 'c', 'd', 'e']
+basket.index('c')
+print(basket in ('d'))
+print('x' in basket)
+print(basket.count('d'))
+
+# sort 
+basket = ['a', 'x', 'b', 'c', 'd', 'e', 'd']
+basket.sort()
+print(basket)
+# sorted method
+print(sorted(basket)) # returns a sorted list
+# copy
+new_basket = basket.copy()
+print(new_basket)
+# reverse
+basket.sort() # optional
+basket.reverse()
+print(basket)
+# range
+print(list(range(101)))
+# join
+sentence = ' '
+new_sentence = sentence.join(['hi', 'my', 'name', 'is', 'JOJO'])
+
+print(new_sentence)
+
+# list unpacking
+a,b,c, *other, d = [1,2,3,4,5,6,7,8,9,]
+print(a)
+print(b)
+print(c)
+print(other)
+print(d)
