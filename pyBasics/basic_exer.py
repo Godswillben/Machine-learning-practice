@@ -34,3 +34,33 @@ counter = 0
 for item in my_list:
     counter = counter + item
 print(counter)
+
+# GUI
+picture = [
+    [0, 0, 0, 1, 0,0, 0],
+    [0, 0, 1, 1, 1,0, 0],
+    [0, 1, 1, 1, 1,1, 0],
+    [1, 1, 1, 1, 1,1, 1],
+    [0, 0, 0, 1, 0,0, 0],
+    [0, 0, 0, 1, 0,0, 0],
+]
+
+for row in picture:
+    for pixel in row:
+        if (pixel == 1):
+            print('*', end='')
+        else:
+            print(" ", end='')
+
+    print('')
+
+# Exercise: check for duplicate
+some_list = ["a", "b", "c", "b", "n", "n"]
+
+duplicates = []
+for value in some_list:
+    if some_list.count(value) > 1:
+        if value not in duplicates:
+            duplicates.append(value)
+        
+print(duplicates)
