@@ -115,7 +115,7 @@ def multiply_by2(li):
     return new_list
 
 # map, filter, zip, and reduce functions
-
+# map
 my_list = [1,2, 3]
 def multiply_by2(item):
     return item*2
@@ -123,4 +123,26 @@ def multiply_by2(item):
 print(list(map(multiply_by2, my_list)))
 print(my_list)
 
+# filter
+def only_odd(item):
+    """
+    returns true if odd else false
+    """
+    return item % 2 != 0
+print(list(filter(only_odd, my_list)))
 
+# zip
+your_list = [10, 20, 30]
+thier_list = (5,4, 3)
+print(list(zip(my_list, your_list, thier_list)))
+print(my_list)
+
+# reduce
+from functools import reduce
+
+def accumulator(acc, item):
+    print(acc, item)
+    return acc + item
+
+print(reduce(accumulator, my_list, 10))
+print(my_list)
