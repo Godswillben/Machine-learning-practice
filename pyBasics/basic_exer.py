@@ -75,74 +75,11 @@ def highest_even(li):
 
 print(highest_even([10, 2, 3, 4, 8, 11]))
 
-# Scope - what variables do I have access to?\
-if True:
-    x = 10
 
-def some_func():
-    total = 100
-    print(x)
+# duplicates using comprehensions
 
-# scope and dependecy injection
-total = 0
+some_list = ['a', 'b', 'c', 'm', 'n', 'n']
 
-def count(total):
-    total += 1
-    return total
+duplicates = list(set([x for x in some_list if some_list.count(x) > 1]))
 
-print(count(count(count(total))))
-
-# scope non local
-def outer():
-    x = "local"
-    def inner():
-        nonlocal x
-        x = "nonlocal"
-        print("inner:", x)
-
-    inner()
-    print("outer:", x)
-
-outer()
-
-# functional programming: pure functions
-# function shoule take input and always return same output
-# function not affect anything outside it's scope
-def multiply_by2(li):
-    new_list = []
-    for item in li:
-        new_list.append(item*2)
-    return new_list
-
-# map, filter, zip, and reduce functions
-# map
-my_list = [1,2, 3]
-def multiply_by2(item):
-    return item*2
-
-print(list(map(multiply_by2, my_list)))
-print(my_list)
-
-# filter
-def only_odd(item):
-    """
-    returns true if odd else false
-    """
-    return item % 2 != 0
-print(list(filter(only_odd, my_list)))
-
-# zip
-your_list = [10, 20, 30]
-thier_list = (5,4, 3)
-print(list(zip(my_list, your_list, thier_list)))
-print(my_list)
-
-# reduce
-from functools import reduce
-
-def accumulator(acc, item):
-    print(acc, item)
-    return acc + item
-
-print(reduce(accumulator, my_list, 10))
-print(my_list)
+print(duplicates)

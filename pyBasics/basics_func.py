@@ -70,3 +70,99 @@ def super_func(*args, **kwargs):
 print(super_func(1,2,3,4,5, num1=5, num2=10))
 
 #Rule: params, *args, default parameters, **kwargs
+
+
+# Scope - what variables do I have access to?\
+if True:
+    x = 10
+
+def some_func():
+    total = 100
+    print(x)
+
+# scope and dependecy injection
+total = 0
+
+def count(total):
+    total += 1
+    return total
+
+print(count(count(count(total))))
+
+# scope non local
+def outer():
+    x = "local"
+    def inner():
+        nonlocal x
+        x = "nonlocal"
+        print("inner:", x)
+
+    inner()
+    print("outer:", x)
+
+outer()
+
+# functional programming: pure functions
+# function shoule take input and always return same output
+# function not affect anything outside it's scope
+def multiply_by2(li):
+    new_list = []
+    for item in li:
+        new_list.append(item*2)
+    return new_list
+
+# map, filter, zip, and reduce functions
+# map
+my_list = [1,2, 3]
+def multiply_by2(item):
+    return item*2
+
+print(list(map(multiply_by2, my_list)))
+print(my_list)
+
+# filter
+def only_odd(item):
+    """
+    returns true if odd else false
+    """
+    return item % 2 != 0
+print(list(filter(only_odd, my_list)))
+
+# zip
+your_list = [10, 20, 30]
+thier_list = (5,4, 3)
+print(list(zip(my_list, your_list, thier_list)))
+print(my_list)
+
+# reduce
+from functools import reduce
+
+def accumulator(acc, item):
+    print(acc, item)
+    return acc + item
+
+print(reduce(accumulator, my_list, 10))
+print(my_list)
+
+# comprehensions
+# list, set, and dictionary comprehensions
+# list comprehensions
+my_list = [char for char in 'hello']
+my_list2 = [num for num in range(0, 100)]
+my_list3 = [num**2 for num in range(0, 100)]
+my_list4 = [num**2 for num in range(0,100) if num % 2==0]
+
+print(my_list4)
+
+# set and dictionary comprehensions
+my_list = {char for char in 'hello'} # set
+simple_dict = {
+    'a': 1,
+    'b': 2
+}
+my_dict = {k:v**2 for k,v in simple_dict.items() if v%2==0}
+
+my_dict = {num:num*2 for num in [1, 2,3]}
+
+print(my_dict)
+
