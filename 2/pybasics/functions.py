@@ -10,10 +10,15 @@ def show_tree(picture):
 show_tree([0,1,0,1])
 
 # parameters and arguments
+
+# Parameters
 def say_hello(name, emoji):
     print(f'hellooo {name} {emoji}')
 
-# arguments
+# arguments || positional arguments
 say_hello('Andrei', ":)`")
 say_hello('Dan', ":)`")
 say_hello('Emily', ":)`")
+
+# keyword arguments
+say_hello(emoji=":)`", name='bibi')
