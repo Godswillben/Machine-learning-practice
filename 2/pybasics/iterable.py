@@ -11,4 +11,16 @@ for i,char in enumerate(list(range(100))):
     if char == 50:
         print(f'index of 50 is: {i}')
 
+# While loops
+i=0
+while i < 50:
+    print(i)
+    i += 1
+    break
+else:
+    print('done with all the work')
 
+while True:
+    response = input('say something!: ')
+    if (response == 'bye'):
+        break
