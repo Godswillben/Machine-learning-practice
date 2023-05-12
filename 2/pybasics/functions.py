@@ -22,3 +22,7 @@ say_hello('Emily', ":)`")
 
 # keyword arguments
 say_hello(emoji=":)`", name='bibi')
+
+# Default parameters
+def say_hello_default(name="Darth vader", emoji=":)"):
+    print(f'helllooo {name} {emoji}')
