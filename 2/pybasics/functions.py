@@ -29,3 +29,14 @@ def say_hello_default(name="Darth vader", emoji=":)"):
 
 say_hello_default()
 say_hello_default("melly")
+
+# Doc string
+def test(a):
+    # ways to documents what a function does
+    # or funtion of a function (get it ;)
+    '''
+    Info: this function tests and prints a 
+    '''
+    print(a)
+
+print(test.__doc__)
