@@ -55,3 +55,14 @@ def super_func(name, *args, i='hi', **kwargs):
     return sum(args) + total
 
 print(super_func('Andy', 1,2,3,4,5, num1=10, num2=5))
+
+# Scope - what variables do I have access to? \
+if True:
+    x = 10
+
+def some_func():
+    total = 100
+    
+print(x)
+
+
