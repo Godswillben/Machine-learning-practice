@@ -65,4 +65,18 @@ def some_func():
     
 print(x)
 
+# scope and it's rules
+a=1
 
+def parent():
+    def confusion():
+        return a
+    return confusion()
+
+print(parent())
+print(a)
+
+#1 - start with local
+#2 - Parent local?
+#3 - Global
+#4 - built in python functions.
