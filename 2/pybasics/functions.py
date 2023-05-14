@@ -128,3 +128,12 @@ your_list = [1,2,3]
 their_list = (5,4,3)
 
 print(list(zip(my_list, your_list, their_list)))
+
+# reduce
+from functools import reduce
+
+def accumulator(acc, item):
+    print(acc, item)
+    return acc + item
+
+print(reduce(accumulator, my_list, 10))
