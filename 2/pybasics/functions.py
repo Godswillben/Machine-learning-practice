@@ -122,3 +122,9 @@ def only_odd(item):
 
 print(list(filter(only_odd, my_list)))
 print(my_list)
+
+# zip
+your_list = [1,2,3]
+their_list = (5,4,3)
+
+print(list(zip(my_list, your_list, their_list)))
